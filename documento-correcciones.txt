@@ -1,0 +1,64 @@
+# Correcciones y Funcionamiento del Proyecto EAUTPL
+
+## Correcciones Principales
+
+1. **Eliminación de redundancias en módulos:**
+   - Se han centralizado las funciones comunes en un módulo de "Entidades" y "Servicios Compartidos".
+   - Se ha eliminado la duplicación de lógica de negocio entre módulos.
+
+2. **Normalización de la base de datos:**
+   - Se ha creado un esquema unificado que elimina redundancias.
+   - Se han implementado relaciones adecuadas entre tablas para mantener la integridad referencial.
+
+3. **Aplicación de Arquitectura Limpia:**
+   - Se han separado claramente las capas de Dominio, Aplicación, Infraestructura y Presentación.
+   - Se utilizan interfaces para desacoplar los componentes y facilitar las pruebas unitarias.
+
+4. **Implementación de patrones de diseño:**
+   - Se utiliza el patrón Repository para abstraer el acceso a datos.
+   - Se implementa el patrón Factory para la creación de objetos complejos.
+   - Se aplica el patrón Observer para manejar eventos y actualizaciones en tiempo real.
+
+## Funcionamiento del Proyecto
+
+El proyecto EAUTPL ahora funciona como un sistema integrado y modular para la gestión de una finca bovina productora de leche. Aquí se describe el funcionamiento general:
+
+1. **Capa de Dominio (Core):**
+   - Contiene las entidades principales (Animal, Alimentación, Producción, etc.) y la lógica de negocio esencial.
+   - Define los casos de uso que representan las operaciones principales del sistema.
+
+2. **Capa de Aplicación:**
+   - Orquesta los casos de uso y coordina la interacción entre la capa de dominio y la infraestructura.
+   - Implementa servicios que encapsulan la lógica de aplicación compleja.
+
+3. **Capa de Infraestructura:**
+   - Maneja la persistencia de datos utilizando un ORM para interactuar con la base de datos.
+   - Implementa los repositorios que proporcionan una abstracción sobre el acceso a datos.
+   - Integra servicios externos como sensores IoT y sistemas de monitoreo ambiental.
+
+4. **Capa de Presentación:**
+   - Proporciona una interfaz web para la gestión del sistema.
+   - Expone una API RESTful para integración con otros sistemas.
+
+5. **Flujo de Datos:**
+   - Los datos de los sensores y sistemas de monitoreo se recopilan en tiempo real.
+   - La información se procesa en la capa de aplicación, aplicando reglas de negocio y algoritmos de IA.
+   - Los resultados se almacenan en la base de datos y se presentan a través de la interfaz de usuario.
+
+6. **Módulos Principales:**
+   - **Gestión de Animales:** Seguimiento individual de cada animal, incluyendo salud, producción y genealogía.
+   - **Producción de Leche:** Registro y análisis de la producción diaria.
+   - **Alimentación:** Gestión de dietas y control de inventario de alimentos.
+   - **Salud Animal:** Seguimiento de tratamientos y prevención de enfermedades.
+   - **Monitoreo Ambiental:** Control de condiciones climáticas y su impacto en la producción.
+   - **Análisis y Reportes:** Generación de informes y dashboards para toma de decisiones.
+
+7. **Integración de IA:**
+   - Modelos predictivos para optimizar la producción y detectar problemas de salud tempranamente.
+   - Análisis de imágenes para monitoreo del comportamiento animal.
+
+8. **Escalabilidad y Rendimiento:**
+   - El sistema está diseñado para escalar horizontalmente, permitiendo aumentar la capacidad añadiendo más servidores.
+   - Se utilizan técnicas de caché y procesamiento en lotes para mejorar el rendimiento con grandes volúmenes de datos.
+
+Este nuevo diseño asegura un sistema más coherente, mantenible y escalable, adhiriéndose a los principios SOLID y de Arquitectura Limpia.

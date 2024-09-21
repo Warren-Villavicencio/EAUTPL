@@ -1,0 +1,40 @@
+graph TD
+    A[Cliente Web/Móvil] --> B[API Gateway]
+    B --> C[Servicio de Autenticación y Usuarios]
+    B --> D[Microservicio de Gestión de Animales]
+    B --> E[Microservicio de Producción de Leche]
+    B --> F[Microservicio de Alimentación]
+    B --> G[Microservicio de Salud]
+    B --> H[Microservicio de Reproducción]
+    B --> I[Microservicio de Reportes y Analítica]
+    D --> J[(Base de Datos Animales)]
+    E --> K[(Base de Datos Producción)]
+    F --> L[(Base de Datos Alimentación)]
+    G --> M[(Base de Datos Salud)]
+    H --> N[(Base de Datos Reproducción)]
+    I --> O[(Data Warehouse)]
+    P[Servicio de Eventos] --> D
+    P --> E
+    P --> F
+    P --> G
+    P --> H
+    Q[Servicio de IA y ML] --> I
+    Q --> D
+    Q --> E
+    Q --> F
+    Q --> G
+    Q --> H
+    R[Servicio de Monitoreo y Alertas] --> B
+    R --> D
+    R --> E
+    R --> F
+    R --> G
+    R --> H
+    S[Servicio de Configuración] --> B
+    S --> C
+    S --> D
+    S --> E
+    S --> F
+    S --> G
+    S --> H
+    S --> I
